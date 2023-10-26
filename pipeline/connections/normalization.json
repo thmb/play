@@ -1,0 +1,9 @@
+{
+    "name": "Normalization",
+    "operatorConfiguration": {
+        "operatorType": "normalization",
+        "normalization": {
+            "option": "basic"
+        }
+    }
+}

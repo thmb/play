@@ -1,0 +1,217 @@
+{
+    "name": "Purchase - SAP",
+    "namespaceDefinition": "destination",
+    "namespaceFormat": "${SOURCE_NAMESPACE}",
+    "prefix": "sap_",
+    "status": "active",
+    "scheduleType": "manual",
+    "geography": "auto",
+    "breakingChange": false,
+    "notifySchemaChanges": false,
+    "notifySchemaChangesByEmail": false,
+    "nonBreakingChangesPreference": "ignore",
+    "operationIds": [],
+    "syncCatalog": {
+        "streams": [
+            {
+                "stream": {
+                    "name": "purchase_order",
+                    "jsonSchema": {
+                        "type": "object",
+                        "$schema": "http://json-schema.org/draft-07/schema#",
+                        "properties": {
+                            "__count": {
+                                "type": ["null", "string"]
+                            },
+                            "results": {
+                                "type": ["null", "array"],
+                                "items": {
+                                    "type": ["null", "object"],
+                                    "properties": {
+                                        "Customer": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "Language": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "Supplier": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "CompanyCode": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "ReleaseCode": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "CreationDate": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "ExchangeRate": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "PaymentTerms": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "CreatedByUser": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "PurchaseOrder": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "InvoicingParty": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "NetPaymentDays": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "SupplyingPlant": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "DownPaymentType": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "PricingDocument": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "PurchasingGroup": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "ValidityEndDate": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "DocumentCurrency": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "IncotermsVersion": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "PricingProcedure": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "TaxReturnCountry": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "CashDiscount1Days": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "CashDiscount2Days": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "DownPaymentAmount": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "PurchaseOrderDate": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "PurchaseOrderType": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "SupplyingSupplier": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "ValidityStartDate": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "DownPaymentDueDate": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "IncotermsLocation1": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "IncotermsLocation2": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "LastChangeDateTime": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "ExchangeRateIsFixed": {
+                                            "type": ["null", "boolean"]
+                                        },
+                                        "SupplierPhoneNumber": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "CashDiscount1Percent": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "CashDiscount2Percent": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "PurchaseOrderSubtype": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "ReleaseIsNotCompleted": {
+                                            "type": ["null", "boolean"]
+                                        },
+                                        "PurchasingOrganization": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "VATRegistrationCountry": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "IncotermsClassification": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "ManualSupplierAddressID": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "PurchasingDocumentOrigin": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "IncotermsTransferLocation": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "PurgReleaseSequenceStatus": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "PurchasingProcessingStatus": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "PurgReleaseTimeTotalAmount": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "SupplierQuotationExternalID": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "SupplierRespSalesPersonName": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "IsIntrastatReportingExcluded": {
+                                            "type": ["null", "boolean"]
+                                        },
+                                        "IsIntrastatReportingRelevant": {
+                                            "type": ["null", "boolean"]
+                                        },
+                                        "PurchasingCompletenessStatus": {
+                                            "type": ["null", "boolean"]
+                                        },
+                                        "PurgReasonForDocCancellation": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "DownPaymentPercentageOfTotAmt": {
+                                            "type": ["null", "string"]
+                                        },
+                                        "PurchasingDocumentDeletionCode": {
+                                            "type": ["null", "string"]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "supportedSyncModes": ["full_refresh"],
+                    "defaultCursorField": [],
+                    "sourceDefinedPrimaryKey": [["PurchaseOrder"]]
+                },
+                "config": {
+                    "syncMode": "full_refresh",
+                    "cursorField": [],
+                    "destinationSyncMode": "overwrite",
+                    "primaryKey": [["PurchaseOrder"]],
+                    "aliasName": "purchase_order",
+                    "selected": true,
+                    "fieldSelectionEnabled": false
+                }
+            }
+        ]
+    }
+}

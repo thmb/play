@@ -1,0 +1,32 @@
+# AIRBYTE
+
+# AIRFLOW
+
+# DBT
+
+# DOCKER
+
+# FASTAPI
+
+# KAFKA
+
+# KUBERNETES
+
+# MINIO
+
+# NUXT
+
+# POSTGRES
+
+# PROMETHEUS
+
+# SKLEARN
+
+# SUPERSET
+
+# TENSORFLOW
+
+# TERRAFORM
+.terraform/
+aws-rootkey.csv
+main-key.pem

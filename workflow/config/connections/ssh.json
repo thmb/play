@@ -1,0 +1,8 @@
+{
+    "conn_type": "ssh",
+    "connection_id": "transform",
+    "host": "172.17.0.1",
+    "port": 22,
+    "login": "thiago",
+    "password": "8462"
+}

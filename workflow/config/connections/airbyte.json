@@ -1,0 +1,8 @@
+{
+    "conn_type": "airbyte",
+    "connection_id": "pipeline",
+    "host": "airbyte-proxy",
+    "port": 8000,
+    "login": "airbyte",
+    "password": "airbyte"
+}

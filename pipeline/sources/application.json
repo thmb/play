@@ -1,0 +1,22 @@
+{
+    "name": "STOR",
+    "sourceName": "Microsoft SQL Server (MSSQL)",
+    "sourceDefinitionId": "b5ea17b1-f170-46dc-bc31-cc744ca984c1",
+    "connectionConfiguration": {
+        "host": "10.15.4.11",
+        "port": 1433,
+        "username": "sa",
+        "password": "Cmocdw2023",
+        "database": "StorDB_DEV",
+        "schemas": ["CMOC"],
+        "ssl_method": {
+            "ssl_method": "unencrypted"
+        },
+        "tunnel_method": {
+            "tunnel_method": "NO_TUNNEL"
+        },
+        "replication_method": {
+            "method": "STANDARD"
+        }
+    }
+}

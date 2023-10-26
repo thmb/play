@@ -1,0 +1,6 @@
+{
+    "AIRBYTE_HOST": "airbyte-proxy",
+    "AIRBYTE_PORT": 8000,
+    "AIRBYTE_USER": "airbyte",
+    "AIRBYTE_PASS": "airbyte"
+}

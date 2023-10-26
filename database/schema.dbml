@@ -1,0 +1,85 @@
+Table authentications {
+  user_id uuid [pk, ref: - users.id]
+  username varchar(64) [not null]
+  password varchar(128) [not null]
+  version timestamptz [not null, default: `now()`]
+  Indexes {
+    username
+    password
+    version
+  }
+}
+
+Table authorizations {
+  user_id uuid [ref: > users.id]
+  role_id uuid [ref: > roles.id]
+  Indexes {
+    (user_id, role_id) [pk]
+  }
+}
+
+Table roles {
+  id uuid [pk, default: `uuid_generate_v4()`]
+  name varchar(32) [not null]
+  permissions "varchar(32)[]" [not null]
+  version timestamptz [not null, default: `now()`]
+  Indexes {
+    name
+    permissions
+    version
+  }
+}
+
+Table users {
+  id uuid [pk, default: `uuid_generate_v4()`]
+  name varchar(64) [not null]
+  skills "varchar(32)[]" [not null, note: 'item skill']
+  address jsonb [note: 'street, number, city, etc']
+  location geometry(point,4326) [note: 'lat, lng']
+  payment double [note: 'amount per hour ']
+  version timestamptz [not null, default: `now()`]
+  Indexes {
+    name
+    skills
+    address
+    location
+    payment
+    version
+  }
+}
+
+Table tasks {
+  id uuid [pk, default: `uuid_generate_v4()`]
+  previous_id uuid [ref: - tasks.id, note: 'in sequence']
+  user_id uuid [ref: > users.id, note: 'allows null for project plan']
+  project_id uuid [ref: > projects.id, not null]
+  items jsonb[] [not null, note: 'type, date, skill, content']
+  effort interger [note: 'in hours']
+  version timestamptz [not null, default: `now()`]
+  Indexes {
+    previous_id
+    user_id
+    project_id
+    items
+    effort
+    version
+  }
+}
+
+Table projects {
+  id uuid [pk, default: `uuid_generate_v4()`]
+  title varchar(64)
+  report text [note: 'HTML content']
+  deadline timestamptz
+  budget float [note: 'EUR or Bitcoin']
+  done boolean [not null, default: `false`]
+  version timestamptz [not null, default: `now()`]
+  Indexes {
+    title
+    report
+    deadline
+    budget
+    done
+    version
+  }
+}
