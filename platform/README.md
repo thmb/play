@@ -66,13 +66,9 @@ Leveraging a managed version of Kubernetes allows developers and businesses to t
 
 In this project the following namespace configuration is recommended as part of the architecture design:
 
-- **webapp** -> nginx + uvicorn
-- **analytics** -> streamlit
-- **workflow** -> airflow(dbt) + airbyte
-- **storage** -> minio + postgres(pgadmin)
-- **compute** -> (py)spark
-- **stream** -> kafka(kraft)
-- **monitor** -> prometheus
+- **apps** -> webapp + restapi + analytics
+- **data** -> storage + database + stream + blockchain
+- **work** -> workflow + pipeline + transform + engine + metric
 
 ## HELM-CHARTS (OPERATORS)
 
