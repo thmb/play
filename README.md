@@ -14,7 +14,7 @@ We strongly value concepts (as they last longer) over tools (which are interchan
 - [VueJS](webapp/README.md): an approachable, performant and versatile framework for building web user interfaces.
 - [Streamlit](analytics/README.md): a faster way to build and share data (web) apps in pure Python, without frontend code.
 - [FastAPI](restapi/README.md): modern and high-performance web framework to build APIs with Python and standard type hints.
-- [Spark](engine/README.md): multi-language engine for executing data engineering/science, and machine learning algorithms on clusters.
+- [Spark](engine/README.md): multi-language engine for executing data engineering/science, and machine learning on clusters.
 - [Airflow](workflow/README.md): platform created by the community to programmatically author, schedule and monitor workflows.
 - [Airbyte](pipeline/README.md): an EL(T) tool that syncs data from applications, APIs and databases to warehouses.
 - [DBT](transform/README.md): SQL-first transformation tool to deploy analytics code following software engineering workflow.
