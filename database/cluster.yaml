@@ -4,8 +4,8 @@ type: kubernetes.io/basic-auth
 metadata:
     name: postgres-secret
 data:
-    username: dXNlcg== # user
-    password: c2VjcmV0 # secret
+    username: cmVzdGFwaQ # restapi
+    password: UGEkJHcwcmQ # Pa$$w0rd
 ---
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
@@ -15,9 +15,21 @@ spec:
     instances: 1
     bootstrap:
         initdb:
-            database: test
-            owner: user
+            database: application
+            owner: restapi
+            encoding: "UTF8" # default
+            dataChecksums: false # default
+            localeCollate: "en_US" # default
+            localeCType: "en_US" # default
+            postInitSQL:
+                - CREATE SCHEMA IF NOT EXISTS business;
+                - ALTER DATABASE application SET search_path TO business, public;
+                - CREATE EXTENSION IF NOT EXISTS "uuid-ossp" WITH SCHEMA public;
+                - CREATE EXTENSION IF NOT EXISTS "postgis" WITH SCHEMA public;
+                # - CREATE EXTENSION IF NOT EXISTS postgis_topology WITH SCHEMA public;
+                # - CREATE EXTENSION IF NOT EXISTS fuzzystrmatch WITH SCHEMA public;
+                # - CREATE EXTENSION IF NOT EXISTS postgis_tiger_geocoder WITH SCHEMA public;
             secret:
                 name: postgres-secret
     storage:
-        size: 1Gi
+        size: 1G
