@@ -46,6 +46,21 @@ minikube addons list # to double check
 kubectl port-forward service/postgresql 5432:5432
 ```
 
+### [Persistent Volumes (hostPath)](https://minikube.sigs.k8s.io/docs/handbook/persistent_volumes)
+
+Minikube is configured to persist files stored under the following directories, which are made in the node VM (or on your localhost if running on bare metal). You may lose data from other directories on reboots.
+
+- /data*
+- /var/lib/minikube
+- /var/lib/docker
+- /var/lib/containerd
+- /var/lib/buildkit
+- /var/lib/containers
+- /tmp/hostpath_pv*
+- /tmp/hostpath-provisioner*
+
+\* mount point for another directory, stored under /var or on a separate data disk
+
 ## CLUSTER (PRODUCTION)
 
 - [Download Kubernetes](https://kubernetes.io/releases/download)
