@@ -54,7 +54,7 @@ Table business.tasks {
   user_id uuid [ref: > business.users.id, note: 'planning phase']
   project_id uuid [ref: > business.projects.id, not null]
   items jsonb[] [not null, note: 'type, date, skill, content']
-  effort interger [note: 'amount of time (hours)']
+  effort integer [note: 'amount of time (hours)']
   version timestamptz [not null, default: `now()`]
   Indexes {
     previous_id
@@ -71,7 +71,7 @@ Table business.projects {
   title varchar(64)
   report text [note: 'rich (HTML/MD) content']
   deadline timestamptz
-  budget double [note: 'USD, EUR or Bitcoin']
+  budget decimal [note: 'USD, EUR or Bitcoin']
   done boolean [not null, default: `false`]
   version timestamptz [not null, default: `now()`]
   Indexes {

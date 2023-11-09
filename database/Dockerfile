@@ -13,4 +13,7 @@ RUN apt-get update \
     postgresql-$PG_MAJOR-postgis-$POSTGIS_MAJOR-scripts \
     && rm -rf /var/lib/apt/lists/*
 
-EXPOSE 5432
+# Change postgres user id to 26 and make it default as the reference implementation does.
+# https://github.com/cloudnative-pg/postgis-containers/blob/main/PostGIS/16/Dockerfile
+RUN usermod -u 26 postgres
+USER 26

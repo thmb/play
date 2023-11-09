@@ -1,53 +1,53 @@
 CREATE SCHEMA IF NOT EXISTS "business";
 
 CREATE TABLE "business"."authentications" (
-    "user_id" uuid PRIMARY KEY,
-    "username" varchar(64) NOT NULL,
-    "password" varchar(128) NOT NULL,
-    "version" timestamptz NOT NULL DEFAULT (now())
+  "user_id" uuid PRIMARY KEY,
+  "username" varchar(64) NOT NULL,
+  "password" varchar(128) NOT NULL,
+  "version" timestamptz NOT NULL DEFAULT (now())
 );
 
 CREATE TABLE "business"."authorizations" (
-    "user_id" uuid,
-    "role_id" uuid,
-    PRIMARY KEY ("user_id", "role_id")
+  "user_id" uuid,
+  "role_id" uuid,
+  PRIMARY KEY ("user_id", "role_id")
 );
 
 CREATE TABLE "business"."roles" (
-    "id" uuid PRIMARY KEY DEFAULT (uuid_generate_v4()),
-    "name" varchar(32) NOT NULL,
-    "permissions" varchar(32)[] NOT NULL,
-    "version" timestamptz NOT NULL DEFAULT (now())
+  "id" uuid PRIMARY KEY DEFAULT (uuid_generate_v4()),
+  "name" varchar(32) NOT NULL,
+  "permissions" varchar(32)[] NOT NULL,
+  "version" timestamptz NOT NULL DEFAULT (now())
 );
 
 CREATE TABLE "business"."users" (
-    "id" uuid PRIMARY KEY DEFAULT (uuid_generate_v4()),
-    "name" varchar(64) NOT NULL,
-    "skills" varchar(32)[] NOT NULL,
-    "address" jsonb,
-    "location" geometry(point,4326),
-    "payment" float,
-    "version" timestamptz NOT NULL DEFAULT (now())
+  "id" uuid PRIMARY KEY DEFAULT (uuid_generate_v4()),
+  "name" varchar(64) NOT NULL,
+  "skills" varchar(32)[] NOT NULL,
+  "address" jsonb,
+  "location" geometry(point,4326),
+  "payment" float,
+  "version" timestamptz NOT NULL DEFAULT (now())
 );
 
 CREATE TABLE "business"."tasks" (
-    "id" uuid PRIMARY KEY DEFAULT (uuid_generate_v4()),
-    "previous_id" uuid,
-    "user_id" uuid,
-    "project_id" uuid NOT NULL,
-    "items" jsonb[] NOT NULL,
-    "effort" interger,
-    "version" timestamptz NOT NULL DEFAULT (now())
+  "id" uuid PRIMARY KEY DEFAULT (uuid_generate_v4()),
+  "previous_id" uuid,
+  "user_id" uuid,
+  "project_id" uuid NOT NULL,
+  "items" jsonb[] NOT NULL,
+  "effort" integer,
+  "version" timestamptz NOT NULL DEFAULT (now())
 );
 
 CREATE TABLE "business"."projects" (
-    "id" uuid PRIMARY KEY DEFAULT (uuid_generate_v4()),
-    "title" varchar(64),
-    "report" text,
-    "deadline" timestamptz,
-    "budget" double,
-    "done" boolean NOT NULL DEFAULT (false),
-    "version" timestamptz NOT NULL DEFAULT (now())
+  "id" uuid PRIMARY KEY DEFAULT (uuid_generate_v4()),
+  "title" varchar(64),
+  "report" text,
+  "deadline" timestamptz,
+  "budget" decimal,
+  "done" boolean NOT NULL DEFAULT (false),
+  "version" timestamptz NOT NULL DEFAULT (now())
 );
 
 CREATE INDEX ON "business"."authentications" ("username");
